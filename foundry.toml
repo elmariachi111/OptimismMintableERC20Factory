@@ -1,0 +1,7 @@
+[profile.default]
+src = 'src'
+solc_version = "0.8.15"
+evm_version = "london"
+optimizer = true
+optimizer_runs = 999999
+
