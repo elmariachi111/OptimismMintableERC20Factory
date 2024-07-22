@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { Strings } from "./oz/contracts/utils/Strings.sol";
+import { Strings } from "@openzeppelin/contracts/utils/Strings.sol";
 
 /// @title Semver
 /// @notice Semver is a simple contract for managing contract versions.
@@ -27,6 +27,14 @@ contract Semver {
     /// @notice Returns the full semver contract version.
     /// @return Semver contract version as a string.
     function version() public view returns (string memory) {
-        return string(abi.encodePacked(Strings.toString(MAJOR_VERSION), ".", Strings.toString(MINOR_VERSION), ".", Strings.toString(PATCH_VERSION)));
+        return string(
+            abi.encodePacked(
+                Strings.toString(MAJOR_VERSION),
+                ".",
+                Strings.toString(MINOR_VERSION),
+                ".",
+                Strings.toString(PATCH_VERSION)
+            )
+        );
     }
 }
